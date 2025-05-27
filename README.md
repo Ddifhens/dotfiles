@@ -1,5 +1,8 @@
 #MININERVA
 
+https://github.com/Ddifhens/dotfiles/blob/master/2025-05-27-054000_1366x768_scrot.png?raw=true
+
+https://github.com/Ddifhens/dotfiles/blob/master/2025-05-27-054336_1366x768_scrot.png?raw=true
 
 
 this is a pretty simple repo/backup of my personal dotfiles/setup scripts, for my laptop. The objetive is to make it as reproducible as possible with the tools inside.
