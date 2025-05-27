@@ -21,7 +21,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 #set background using feh
-exec_always --no-startup-id feh --bg-fill ~/dotfiles/wall.png
+exec_always --no-startup-id feh --bg-fill ~/dotfiles/wall.jpg
 				
 				###############
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -185,9 +185,9 @@ bindsym XF86AudioPrev exec playerctl previous
 				#####################
 #inner gaps 
 gaps inner 8
-gaps top 20
-gaps bottom 5
-gaps horizontal 5
+gaps top 0
+gaps bottom 0
+gaps horizontal 0
 
 #set the size of file choose dialog (floating windows)
 for_window [window_role="(?i)GtkFileChooserDialog"] resize set 320 240 
@@ -212,4 +212,7 @@ client.background       #ffffff
 bar {
 	font pango:FiraCode Nerd Font Mono SemBD, 10
 	status_command i3blocks
+	colors {
+		background #202020
+	}
 }
