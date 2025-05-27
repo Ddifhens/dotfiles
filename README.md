@@ -1,8 +1,24 @@
-todo 
+#MININERVA
 
-explore turning the .sh into a makefile (better automatic version control etc )
 
-backup all dots 
+
+this is a pretty simple repo/backup of my personal dotfiles/setup scripts, for my laptop. The objetive is to make it as reproducible as possible with the tools inside.
+
+ 
+
+
+
+##todo 
+
+neovim config (disaster rip off lmao)
+
+package install automation
+
+custom cursor
+
+greetertui theme
+
+explore turning the setup.sh into a makefile (better automatic version control etc )
 
 install script for arch? 
 

@@ -216,3 +216,4 @@ bar {
 		background #202020
 	}
 }
+bindsym $mod+shift+p exec scrot -e 'mv ~/dotfiles'
