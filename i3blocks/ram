@@ -1,12 +1,9 @@
 #!/bin/bash
-#\033[38;2;R;G;Bm
 
-PERCENT=$(mpstat 1 1 | tail -n 1 | awk '{printf "%.0f", 100 - $12}')
-#CPU_TEMP=$(cat /sys/class/power_supply/BAT1/status)
+PERCENT=$(~/dotfiles/scripts/genbar.sh $(free -m | grep 'Mem:' | awk '{ printf "%.0f", $3/$2*100}'))
 COLOR="#68B0CA"
+ICON="󰫿 "
 REV=$((100 - PERCENT))
-TEMP=$(avg_temp=$(sensors | awk '/^Package|^Tdie|^Core 0/ {print $3}' | sed 's/[^0-9.]//g' | awk '{sum += $1; count++} END {printf "%.0f\n", sum/count}')
-echo "$avg_temp°")
 
 if [ $REV -lt 20 ]; then
 	COLOR="#CE3D27"

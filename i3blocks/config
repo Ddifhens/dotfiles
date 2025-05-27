@@ -1,16 +1,21 @@
+[DISK]
+command=~/dotfiles/i3blocks/disk
+interval=500
+
 [CPU]
-command=~/.config/i3blocks/cpu
+command=~/dotfiles/i3blocks/cpu
 interval=3
 
 [RAM]
 full_text=RAM:
-command= echo "RAM:$(~/.config/scripts/genbar.sh $(free -m | grep 'Mem:' | awk '{ printf "%.0f", $3/$2*100}'))"
+command=~/dotfiles/i3blocks/ram 
 interval=1
 
 [BAT]
-command= ~/.config/i3blocks/battery
+command= ~/dotfiles/i3blocks/battery
 interval=1
 
 [TIME]
-command=date +%T
+command=echo " $(date +%T)"
 interval=1
+background=#7e8d50

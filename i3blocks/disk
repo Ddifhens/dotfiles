@@ -1,0 +1,25 @@
+#!/bin/bash
+
+PERCENT=$(df --output=pcent /dev/sda3 | awk 'NR==2 {gsub("%",""); print $1}')
+COLOR="#68B0CA"
+ICON=" "
+REV=$((100 - PERCENT))
+
+if [ $REV -lt 20 ]; then
+	COLOR="#CE3D27"
+elif [ $REV -lt 40 ]; then
+	COLOR="#D38622"
+elif [ $REV -lt 60 ]; then
+	COLOR="#D9DC18"
+elif [ $REV -lt 80 ]; then
+	COLOR="#36AE54"
+fi
+
+if [ $PERCENT -gt 70 ]; then
+	ICON="󰩌 "
+fi
+
+echo "$ICON$(~/.config/scripts/genbar.sh $PERCENT)"
+echo "$PERCENT%"
+echo "$COLOR"
+
