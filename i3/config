@@ -196,9 +196,12 @@ for_window [window_role="(?i)GtkFileChooserDialog"] move position center
 #set position of all floating windows
 for_window [class=".*"] move position center
 
+default_border pixel 0
+default_floating_border pixel 0
+for_window [class="^.*"] border pixel 3
 #colors 
 # class                 border  backgr. text    indicator child_border
-client.focused          #bf83b5 #3b3b4d #c8cedc #2e9ef4   #bf83b5
+client.focused          #A9BE6C #7E8D50 #D0D0D0 #2E9EF4   #A9BE6C
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
