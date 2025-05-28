@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PERCENT=$(~/dotfiles/scripts/genbar.sh $(free -m | grep 'Mem:' | awk '{ printf "%.0f", $3/$2*100}'))
+PERCENT=$(free -m | grep 'Mem:' | awk '{ printf "%.0f", $3/$2*100}')
 COLOR="#68B0CA"
 ICON="󰫿 "
 REV=$((100 - PERCENT))
@@ -15,6 +15,6 @@ elif [ $REV -lt 80 ]; then
 	COLOR="#36AE54"
 fi
 
-echo "$TEMP$ICON$(~/.config/scripts/genbar.sh $PERCENT)"
+echo "$ICON$(~/.config/scripts/genbar.sh $PERCENT)"
 echo "$PERCENT"
 echo "$COLOR"

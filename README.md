@@ -9,6 +9,11 @@ this is a pretty simple repo/backup of my personal dotfiles/setup scripts, for m
 
 also i love tuis so there are a lot of those in this 
 
+
+### Dependencies: 
+
+- sysstat
+
 ## todo 
 
 neovim config (disaster rip off lmao)
