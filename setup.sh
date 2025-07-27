@@ -13,5 +13,9 @@ mkdir -p ~/.config/i3 && cd ~/.config/i3
 ln -s ~/dotfiles/i3/config
 
 #kitty config
-mkdir -p ~/.config/kitty
+rm -rf ~/.config/kitty && cd ~/.config
 ln -s ~/dotfiles/kitty
+
+#nvim config 
+rm -rf ~/.config/nvim && cd ~/.config
+ln -s ~/dotfiles/nvim
