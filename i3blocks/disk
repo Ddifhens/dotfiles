@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PERCENT=$(df --output=pcent /dev/sda3 | awk 'NR==2 {gsub("%",""); print $1}')
+PERCENT=$(df --output=pcent /dev/sda3 | awk 'NR==2 {gsub("%",""); print $1}') | tail -n 1
 COLOR="#68B0CA"
 ICON=" "
 REV=$((100 - PERCENT))

@@ -11,11 +11,10 @@ full_text=RAM:
 command=~/dotfiles/i3blocks/ram 
 interval=1
 
-##[BAT]
-##command= ~/dotfiles/i3blocks/battery
-##interval=1
+[BAT]
+command= ~/dotfiles/i3blocks/battery
+interval=1
 
 [TIME]
 command=echo " $(date +%T)"
 interval=1
-background=#7e8d50

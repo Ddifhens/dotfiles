@@ -2,34 +2,21 @@
 set $mod Mod1
 
 				### STARTUP ###
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: FiraCode Nerd Font Mono SemBD 9
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+# exec picom compositor
+exec --no-startup-id picom
 
 #set background using feh
 exec_always --no-startup-id feh --bg-fill ~/dotfiles/wall.jpg
-				
-				###############
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
 
 # start a terminal 
 bindsym $mod+Return exec kitty
@@ -38,9 +25,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun 
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec rofi -show drun 
 
 # change focus
 bindsym $mod+h focus left
@@ -163,12 +148,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+X exec i3lock
 
 				### FUNCTION KEYS ###
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 
-# increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 
-# decrease screen brightness
-
+bindcode 68 exec brightnessctl set -10
+bindcode 69 exec brightnessctl set +10
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -184,7 +165,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 				#####################
 #inner gaps 
-gaps inner 8
+gaps inner 0
 gaps top 0
 gaps bottom 0
 gaps horizontal 0
@@ -196,12 +177,13 @@ for_window [window_role="(?i)GtkFileChooserDialog"] move position center
 #set position of all floating windows
 for_window [class=".*"] move position center
 
+hide_edge_borders smart
 default_border pixel 0
 default_floating_border pixel 0
 for_window [class="^.*"] border pixel 3
 #colors 
 # class                 border  backgr. text    indicator child_border
-client.focused          #A9BE6C #7E8D50 #D0D0D0 #2E9EF4   #A9BE6C
+client.focused          #A9BE6C #7E8D50 #D0D0D0 #A9BE6C   #A9BE6C
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
