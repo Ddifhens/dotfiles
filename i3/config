@@ -25,7 +25,10 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show drun 
+bindsym $mod+d exec rofi \
+                                -show drun \
+                                --symbols-font "Firacode Semibold" \
+                                -font "Firacode Semibold 9"
 
 # change focus
 bindsym $mod+h focus left
